@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sovava.video.dao.DanmakuMapper">
+
+    <resultMap id="BaseResultMap" type="com.sovava.video.entity.Danmaku">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="videoId" column="video_id" jdbcType="BIGINT"/>
+            <result property="color" column="color" jdbcType="VARCHAR"/>
+            <result property="text" column="text" jdbcType="VARCHAR"/>
+            <result property="time" column="time" jdbcType="DOUBLE"/>
+            <result property="type" column="type" jdbcType="INTEGER"/>
+            <result property="author" column="author" jdbcType="BIGINT"/>
+            <result property="colorDec" column="color_dec" jdbcType="BIGINT"/>
+            <result property="ua" column="ua" jdbcType="VARCHAR"/>
+            <result property="ip" column="ip" jdbcType="VARCHAR"/>
+            <result property="city" column="city" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,video_id,color,
+        text,time,type,
+        author,color_dec,ua,
+        ip,city
+    </sql>
+</mapper>

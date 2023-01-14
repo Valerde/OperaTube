@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sovava.video.dao.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.sovava.video.entity.User">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="mail" column="mail" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="phone" column="phone" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="BIGINT"/>
+            <result property="submitCount" column="submit_count" jdbcType="BIGINT"/>
+            <result property="followCount" column="follow_count" jdbcType="BIGINT"/>
+            <result property="fansCount" column="fans_count" jdbcType="BIGINT"/>
+            <result property="avatarUrl" column="avatar_url" jdbcType="VARCHAR"/>
+            <result property="topImgUrl" column="top_img_url" jdbcType="VARCHAR"/>
+            <result property="introduction" column="introduction" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,username,mail,
+        password,phone,create_time,
+        submit_count,follow_count,fans_count,
+        avatar_url,top_img_url,introduction
+    </sql>
+</mapper>

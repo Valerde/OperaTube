@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+
+        - id: product_route
+          uri: lb://operatube-video
+          predicates:
+            - Path=/api/video/**
+          filters:
+            - RewritePath=/api/video/(?<segment>.*),/video/$\{segment}
+
+          ## 前段项目 ， /api
+        - id: operatube-video-route
+          uri: lb://operatube-video
+          predicates:
+            - Host=operatube.com
+
+#        - id: gulimall_search_route
+#          uri: lb://gulimall-search
+#          predicates:
+#            - Host=search.valmall.com

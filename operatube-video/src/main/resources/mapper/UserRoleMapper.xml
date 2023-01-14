@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sovava.video.dao.UserRoleMapper">
+
+    <resultMap id="BaseResultMap" type="com.sovava.video.entity.UserRole">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="userid" column="userId" jdbcType="BIGINT"/>
+            <result property="role" column="role" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="BIGINT"/>
+            <result property="updateTime" column="update_time" jdbcType="BIGINT"/>
+            <result property="vipStartTime" column="vip_start_time" jdbcType="BIGINT"/>
+            <result property="vipStopTime" column="vip_stop_time" jdbcType="BIGINT"/>
+            <result property="modified" column="modified" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,userId,role,
+        create_time,update_time,vip_start_time,
+        vip_stop_time,modified
+    </sql>
+</mapper>

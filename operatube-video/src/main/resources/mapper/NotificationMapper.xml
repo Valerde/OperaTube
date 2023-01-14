@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sovava.video.dao.NotificationMapper">
+
+    <resultMap id="BaseResultMap" type="com.sovava.video.entity.Notification">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="notifier" column="notifier" jdbcType="BIGINT"/>
+            <result property="receiver" column="receiver" jdbcType="BIGINT"/>
+            <result property="outerId" column="outer_id" jdbcType="BIGINT"/>
+            <result property="commentContent" column="comment_content" jdbcType="VARCHAR"/>
+            <result property="commentId" column="comment_id" jdbcType="BIGINT"/>
+            <result property="type" column="type" jdbcType="INTEGER"/>
+            <result property="createTime" column="create_time" jdbcType="BIGINT"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,notifier,receiver,
+        outer_id,comment_content,comment_id,
+        type,create_time,status
+    </sql>
+</mapper>

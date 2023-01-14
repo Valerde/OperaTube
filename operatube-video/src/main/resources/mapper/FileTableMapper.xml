@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sovava.video.dao.FileTableMapper">
+
+    <resultMap id="BaseResultMap" type="com.sovava.video.entity.FileTable">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="articleId" column="article_id" jdbcType="BIGINT"/>
+            <result property="fileUrl" column="file_url" jdbcType="VARCHAR"/>
+            <result property="fileOriginalName" column="file_original_name" jdbcType="VARCHAR"/>
+            <result property="fileNewName" column="file_new_name" jdbcType="VARCHAR"/>
+            <result property="size" column="size" jdbcType="BIGINT"/>
+            <result property="uploadTime" column="upload_time" jdbcType="BIGINT"/>
+            <result property="uploadUserId" column="upload_user_id" jdbcType="BIGINT"/>
+            <result property="type" column="type" jdbcType="INTEGER"/>
+            <result property="suffixName" column="suffix_name" jdbcType="VARCHAR"/>
+            <result property="duration" column="duration" jdbcType="DOUBLE"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="height" column="height" jdbcType="INTEGER"/>
+            <result property="width" column="width" jdbcType="INTEGER"/>
+            <result property="pixelsNumber" column="pixels_number" jdbcType="BIGINT"/>
+            <result property="frameRate" column="frame_rate" jdbcType="DOUBLE"/>
+            <result property="info" column="info" jdbcType="VARCHAR"/>
+            <result property="ua" column="ua" jdbcType="VARCHAR"/>
+            <result property="ip" column="ip" jdbcType="VARCHAR"/>
+            <result property="city" column="city" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,article_id,file_url,
+        file_original_name,file_new_name,size,
+        upload_time,upload_user_id,type,
+        suffix_name,duration,status,
+        height,width,pixels_number,
+        frame_rate,info,ua,
+        ip,city
+    </sql>
+</mapper>

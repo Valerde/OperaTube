@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sovava.video.dao.TempFileMapper">
+
+    <resultMap id="BaseResultMap" type="com.sovava.video.entity.TempFile">
+            <id property="id" column="ID" jdbcType="BIGINT"/>
+            <result property="createTime" column="CREATE_TIME" jdbcType="BIGINT"/>
+            <result property="date" column="DATE" jdbcType="VARCHAR"/>
+            <result property="filename" column="FILENAME" jdbcType="VARCHAR"/>
+            <result property="path" column="PATH" jdbcType="VARCHAR"/>
+            <result property="size" column="SIZE" jdbcType="BIGINT"/>
+            <result property="uploadFilename" column="UPLOAD_FILENAME" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,CREATE_TIME,DATE,
+        FILENAME,PATH,SIZE,
+        UPLOAD_FILENAME
+    </sql>
+</mapper>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sovava.video.dao.ArticleMapper">
+
+    <resultMap id="BaseResultMap" type="com.sovava.video.entity.Article">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="imgUrl" column="img_url" jdbcType="VARCHAR"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="describes" column="describes" jdbcType="VARCHAR"/>
+            <result property="viewCount" column="view_count" jdbcType="BIGINT"/>
+            <result property="likeCount" column="like_count" jdbcType="BIGINT"/>
+            <result property="favoriteCount" column="favorite_count" jdbcType="BIGINT"/>
+            <result property="dislikeCount" column="dislike_count" jdbcType="BIGINT"/>
+            <result property="examineStatus" column="examine_status" jdbcType="INTEGER"/>
+            <result property="examineMessage" column="examine_message" jdbcType="VARCHAR"/>
+            <result property="category" column="category" jdbcType="INTEGER"/>
+            <result property="tag" column="tag" jdbcType="VARCHAR"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="type" column="type" jdbcType="INTEGER"/>
+            <result property="createTime" column="create_time" jdbcType="BIGINT"/>
+            <result property="updateTime" column="update_time" jdbcType="BIGINT"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="score" column="score" jdbcType="BIGINT"/>
+            <result property="scoreCount" column="score_count" jdbcType="BIGINT"/>
+            <result property="commentCount" column="comment_count" jdbcType="BIGINT"/>
+            <result property="danmakuCount" column="danmaku_count" jdbcType="BIGINT"/>
+            <result property="examineUser" column="examine_user" jdbcType="BIGINT"/>
+            <result property="duration" column="duration" jdbcType="DOUBLE"/>
+            <result property="pixelsNumber" column="pixels_number" jdbcType="BIGINT"/>
+            <result property="frameRate" column="frame_rate" jdbcType="DOUBLE"/>
+            <result property="ua" column="ua" jdbcType="VARCHAR"/>
+            <result property="ip" column="ip" jdbcType="VARCHAR"/>
+            <result property="city" column="city" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,img_url,title,
+        describes,view_count,like_count,
+        favorite_count,dislike_count,examine_status,
+        examine_message,category,tag,
+        user_id,type,create_time,
+        update_time,status,score,
+        score_count,comment_count,danmaku_count,
+        examine_user,duration,pixels_number,
+        frame_rate,ua,ip,
+        city
+    </sql>
+</mapper>
