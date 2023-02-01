@@ -2,6 +2,7 @@ package com.sovava.video.controller;
 
 import com.sovava.common.utils.R;
 import com.sovava.video.entity.Category;
+import com.sovava.video.exception.UserNotFoundException;
 import com.sovava.video.service.ArticleService;
 import com.sovava.video.service.CategoryService;
 import lombok.extern.slf4j.Slf4j;
