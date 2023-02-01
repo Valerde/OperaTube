@@ -1,7 +1,10 @@
 package com.sovava.video.service;
 
+import com.sovava.common.utils.PageUtils;
 import com.sovava.video.entity.Danmaku;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.Map;
 
 /**
 * @author root
@@ -9,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2023-01-13 22:17:14
 */
 public interface DanmakuService extends IService<Danmaku> {
-
+    PageUtils queryPage(Map<String, Object> params);
 }

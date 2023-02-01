@@ -1,10 +1,17 @@
 package com.sovava.video.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.sovava.common.utils.PageUtils;
+import com.sovava.common.utils.Query;
+import com.sovava.video.entity.Comment;
 import com.sovava.video.entity.InvitationCode;
 import com.sovava.video.service.InvitationCodeService;
 import com.sovava.video.dao.InvitationCodeMapper;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 /**
 * @author root
@@ -14,7 +21,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class InvitationCodeServiceImpl extends ServiceImpl<InvitationCodeMapper, InvitationCode>
     implements InvitationCodeService{
+    @Override
+    public PageUtils queryPage(Map<String, Object> params) {
+        IPage<InvitationCode> page = this.page(
+                new Query<InvitationCode>().getPage(params),
+                new QueryWrapper<InvitationCode>()
+        );
 
+        return new PageUtils(page);
+
+    }
 }
 
 

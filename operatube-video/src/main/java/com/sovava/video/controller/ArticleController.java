@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/article")
@@ -31,5 +32,10 @@ public class ArticleController {
     public R getAll() {
         List<Category> list = categoryService.list();
         return R.ok().setData(list);
+    }
+
+    @GetMapping("/home/list")
+    public R getHomeArticleList(@RequestParam Map<String,Object> paramMap){
+        return R.ok().setData(articleService.queryPage(paramMap));
     }
 }

@@ -1,10 +1,16 @@
 package com.sovava.video.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.sovava.common.utils.PageUtils;
+import com.sovava.common.utils.Query;
 import com.sovava.video.dao.ArticleMapper;
 import com.sovava.video.entity.Article;
 import com.sovava.video.service.ArticleService;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 /**
 * @author root
@@ -18,6 +24,16 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
     implements ArticleService{
 
 
+    @Override
+    public PageUtils queryPage(Map<String, Object> params) {
+        IPage<Article> page = this.page(
+                new Query<Article>().getPage(params),
+                new QueryWrapper<Article>()
+        );
+
+        return new PageUtils(page);
+        //TODO: 添加其他信息
+    }
 }
 
 
