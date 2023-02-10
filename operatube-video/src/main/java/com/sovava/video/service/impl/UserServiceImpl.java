@@ -9,8 +9,13 @@ import com.sovava.video.entity.Comment;
 import com.sovava.video.entity.User;
 import com.sovava.video.service.UserService;
 import com.sovava.video.dao.UserMapper;
+import com.sovava.video.service.VerifyCodeService;
+import com.sovava.video.vo.LoginDetailVo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**
@@ -21,6 +26,9 @@ import java.util.Map;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     implements UserService{
+    @Autowired
+    private VerifyCodeService verifyCodeService;
+
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
         IPage<User> page = this.page(
@@ -30,6 +38,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
         return new PageUtils(page);
 
+    }
+
+    @Override
+    public User login(LoginDetailVo loginDetailVo, HttpServletRequest request, HttpServletResponse response) {
+        verifyCodeService.verify(request.getSession().getId(), loginDetailVo.getVerifyCode());
+
+        return null;
     }
 }
 

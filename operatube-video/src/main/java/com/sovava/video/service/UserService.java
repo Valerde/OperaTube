@@ -3,7 +3,10 @@ package com.sovava.video.service;
 import com.sovava.common.utils.PageUtils;
 import com.sovava.video.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.sovava.video.vo.LoginDetailVo;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**
@@ -13,4 +16,7 @@ import java.util.Map;
 */
 public interface UserService extends IService<User> {
     PageUtils queryPage(Map<String, Object> params);
+
+
+    User login(LoginDetailVo loginDetailVo, HttpServletRequest request, HttpServletResponse response);
 }

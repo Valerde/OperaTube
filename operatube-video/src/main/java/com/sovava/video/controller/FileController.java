@@ -31,7 +31,7 @@ public class FileController {
     private FileService fileService;
 
     @GetMapping("/upload/video")
-    public R saveVideo(@RequestParam(value = "file")MultipartFile file, HttpServletRequest request){
+    public R saveVideo(@RequestParam(value = "file[]")MultipartFile file, HttpServletRequest request){
 
     }
 
