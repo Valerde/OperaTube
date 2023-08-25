@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.37.129:8848
+    sentinel:
+      transport:
+        dashboard: 192.168.2.249:8080
+        port: 8719
+  application:
+    name: gulimall-thirdparty
+server:
+  port: 30000
+alibaba:
+  cloud:
+    access-key: LTAI5tLt2gnWBjqGSW2yCNn3
+    secret-key: LcbBvGl0Jc5XqMnRCY4iBtEZYDmTzP
+    oss:
+      endpoint: oss-cn-guangzhou.aliyuncs.com
+feign:
+  sentinel:
+    enabled: true

@@ -10,16 +10,34 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="operatube-common" />
-        <module name="operatube-video" />
         <module name="operatube-gateway" />
+        <module name="operatube-video" />
+        <module name="operatube-common" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="operamall" target="1.5" />
+      <module name="renren-generator" target="1.8" />
+      <module name="valmall-auth-server" target="1.8" />
+      <module name="valmall-cart" target="1.8" />
+      <module name="valmall-common" target="1.8" />
+      <module name="valmall-coupon" target="1.8" />
+      <module name="valmall-gateway" target="1.8" />
+      <module name="valmall-member" target="1.8" />
+      <module name="valmall-order" target="1.8" />
+      <module name="valmall-product" target="1.8" />
+      <module name="valmall-search" target="1.8" />
+      <module name="valmall-seckill" target="1.8" />
+      <module name="valmall-thirdparty" target="1.8" />
+      <module name="valmall-ware" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="operatube-gateway" options="" />
       <module name="operatube-video" options="-parameters" />
+      <module name="renren-generator" options="-parameters" />
+      <module name="valmall-seckill" options="-parameters" />
     </option>
   </component>
 </project>

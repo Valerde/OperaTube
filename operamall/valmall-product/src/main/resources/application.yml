@@ -1,0 +1,59 @@
+spring:
+  zipkin:
+    base-url: http://192.168.37.129:9411/
+    discovery-client-enabled: false
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+  datasource:
+    username: root
+    password: ykn12345
+    url: jdbc:mysql://192.168.37.129:3306/gulimall_pms
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.37.129:8848
+    sentinel:
+      transport:
+        dashboard: 192.168.2.249:8080
+        port: 8719
+  application:
+    name: gulimall-product
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  thymeleaf:
+    cache: false
+  redis:
+    host: 192.168.37.129
+    port: 6379 # 配置使用redis作为缓存
+  cache:
+    type: redis
+    redis:
+      time-to-live: 3600000  #毫秒
+      cache-null-values: true #防止缓存穿透
+#      key-prefix: CACHE_  #key的前缀
+  session:
+    store-type: redis
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto # 设置自增主键
+      logic-delete-value: 1 # 配置
+      logic-not-delete-value: 0
+server:
+  port: 8081
+test:
+  prod:
+    user: ykn
+logging:
+  level:
+    com.sovava: debug
+    org.springframework.cloud.openfeign: debug
+    org.springframework.cloud.sleuth: debug
+feign:
+  sentinel:
+    enabled: true
